@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<!-- Fontawesome (required for icon) -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<!-- BS5 (optional) -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+		<!-- Custom Select CSS -->
+		<link rel="stylesheet" href="custom-select.css" />
+
+		<!-- Jquery (required) -->
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+		<!-- Custom Select JS -->
+		<script defer src="custom-select.js"></script>
+		<style>
+			* {
+				font-family: "Times New Roman", Times, serif;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="card">
+			<div id="singleExample1" class="select" single>
+				<div class="select-head">
+					<label for="">Single Input</label>
+					<div class="container">
+						<input readonly type="text" value="" id="FavFoodIn" placeholder="Select which is your favorite food" />
+						<i class="fa fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+				<ul class="wrapper">
+					<div class="searchbox-container">
+						<input type="text" name="" id="Searchbox" placeholder="Search" />
+						<i class="fa fa-solid fa-search"></i>
+					</div>
+					<li value="A">Burger</li>
+					<li value="B">Carbonara</li>
+					<li value="D">Calamares</li>
+					<li value="C">Spaghetti</li>
+					<li value="D">Pizza</li>
+				</ul>
+			</div>
+
+			<div id="2" class="select" multiple>
+				<div class="select-head">
+					<label for="">Multiple Input</label>
+					<div class="container">
+						<selected-container></selected-container>
+						<placeholder>Select Something</placeholder>
+						<i class="fa fa-solid fa-caret-down"></i>
+					</div>
+				</div>
+				<ul class="wrapper">
+					<div class="searchbox-container">
+						<input type="text" name="" id="Searchbox" placeholder="Search" />
+						<i class="fa fa-solid fa-search"></i>
+					</div>
+					<li value="E">Baao</li>
+					<li value="F">Balatan</li>
+					<li value="G">Bato</li>
+					<li value="H">Buhi</li>
+					<li value="I">Bula</li>
+					<li value="J">Caramoan</li>
+					<li value="K">Camaligan</li>
+					<li value="L">Del Gallego</li>
+					<li value="M">Goa</li>
+					<li value="N">Lagonoy</li>
+					<li value="O">San Fernando</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

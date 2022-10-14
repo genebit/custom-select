@@ -1,0 +1,207 @@
+$focus-color: #33b574;
+$focus-color-50-opacity: #33b574;
+$border-radius: 5px;
+
+$select-head-padding: 0.8rem 1rem;
+$outline-width: 1px;
+$outline: $outline-width solid rgba(0, 0, 50, 1);
+$outline-focused: $focus-color;
+$input-focused-outline-clr: $focus-color;
+$input-box-shadow: 0 3px 8px 0 rgba(0, 0, 50, 0.1);
+
+$option-font-size: 0.8rem;
+$option-hover-anim-time: 200ms;
+$option-hover-bg-clr: rgba(168, 255, 151, 0.5);
+$default-anim-time: 100ms;
+
+$scrollbar-thumb-clr: rgba(56, 177, 32, 0.5);
+
+.select {
+	position: relative;
+	margin-bottom: 1rem;
+
+	.wrapper {
+		list-style-type: none;
+		overflow-y: auto;
+		outline: $outline;
+		padding: 0.5rem;
+		height: auto;
+		max-height: 10rem;
+		border-radius: $border-radius;
+		margin: 1rem 0;
+		position: relative;
+		box-shadow: $input-box-shadow;
+
+		.searchbox-container {
+			background-color: #f3f3f3;
+			border-radius: $border-radius;
+			padding: 0.6rem 1rem;
+			margin-bottom: 0.5rem;
+
+			input {
+				font-size: $option-font-size;
+			}
+
+			transition: outline $default-anim-time ease-in-out;
+
+			input {
+				background-color: transparent;
+				border-width: 0;
+				padding: 0;
+				margin: 0;
+				width: 100%;
+				outline: none;
+			}
+			i {
+				opacity: 50%;
+				position: absolute;
+				right: 1rem;
+				top: 1.25rem;
+			}
+		}
+
+		li {
+			padding: 0.5rem;
+			margin: 0.15rem;
+			font-size: $option-font-size;
+			border-radius: $border-radius;
+
+			&:hover {
+				background-color: $option-hover-bg-clr;
+				cursor: pointer;
+			}
+
+			transition: background-color $option-hover-anim-time ease-in-out;
+		}
+
+		// scrollbar for wrapper
+		&::-webkit-scrollbar {
+			width: 1rem;
+		}
+		&::-webkit-scrollbar-thumb {
+			border: 4px solid rgba(0, 0, 0, 0);
+			background-clip: padding-box;
+			border-radius: 10rem;
+			background-color: $scrollbar-thumb-clr;
+		}
+		&::-webkit-scrollbar-track {
+			background: none;
+		}
+	}
+}
+.select[single],
+.select[multiple] {
+	.select-head {
+		cursor: pointer;
+
+		label {
+			font-weight: 600;
+			position: absolute;
+			top: -0.5rem;
+			left: 1rem;
+			background-color: white;
+			padding: 0 0.5rem;
+			font-size: small;
+
+			transition: color $default-anim-time ease-in-out;
+		}
+
+		.container {
+			outline: $outline;
+			border-radius: $border-radius;
+			padding: $select-head-padding;
+			box-shadow: $input-box-shadow;
+
+			transition: outline $default-anim-time ease-in-out;
+
+			input {
+				cursor: pointer;
+				background-color: transparent;
+				border-width: 0;
+				padding: 0;
+				margin: 0;
+				width: 100%;
+				outline: none;
+				font-size: $option-font-size;
+				opacity: 70%;
+			}
+			i {
+				position: absolute;
+				right: 1rem;
+				top: 0.8rem;
+
+				transform: rotate(0deg);
+				transition: transform 300ms ease-in-out;
+			}
+			i.active {
+				color: $focus-color;
+				transform: rotate(180deg);
+			}
+		}
+		placeholder {
+			font-size: $option-font-size;
+			opacity: 60%;
+		}
+	}
+
+	.wrapper {
+		padding: 0.5rem;
+	}
+
+	li.selected {
+		background-color: $focus-color;
+		color: white;
+	}
+
+	label.active {
+		color: $focus-color;
+	}
+
+	.container.active,
+	.wrapper.active {
+		outline: $outline-width solid $outline-focused;
+	}
+}
+
+.select[multiple] {
+	selected-container {
+		span {
+			z-index: 1000;
+			background-color: $focus-color-50-opacity;
+			padding: 0.2rem 0.85rem;
+			border-radius: $border-radius;
+			font-size: 0.85rem;
+			margin-right: 0.25rem;
+			color: white;
+		}
+	}
+	.wrapper {
+		// .searchbox-container {
+		// 	background-color: #f3f3f3;
+		// 	border-radius: $border-radius;
+		// 	padding: 0.6rem 1rem;
+		// 	margin-bottom: 0.5rem;
+
+		// 	input {
+		// 		font-size: $option-font-size;
+		// 	}
+
+		// 	transition: outline $default-anim-time ease-in-out;
+
+		// 	input {
+		// 		background-color: transparent;
+		// 		border-width: 0;
+		// 		padding: 0;
+		// 		margin: 0;
+		// 		width: 100%;
+		// 		outline: none;
+		// 	}
+		// 	i {
+		// 		opacity: 50%;
+		// 		position: absolute;
+		// 		right: 1rem;
+		// 		top: 1.25rem;
+		// 	}
+		// }
+	}
+}
