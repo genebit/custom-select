@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Demo</title>
 
 		<!-- Fontawesome (required for icon) -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -22,57 +22,35 @@
 			* {
 				font-family: "Times New Roman", Times, serif;
 			}
+			html,
+			body {
+				padding: 2rem;
+			}
 		</style>
 	</head>
 	<body>
-		<div class="card">
-			<div id="singleExample1" class="select" single>
-				<div class="select-head">
-					<label for="">Single Input</label>
-					<div class="container">
-						<input readonly type="text" value="" id="FavFoodIn" placeholder="Select which is your favorite food" />
-						<i class="fa fa-solid fa-caret-down"></i>
-					</div>
-				</div>
-				<ul class="wrapper">
-					<div class="searchbox-container">
-						<input type="text" name="" id="Searchbox" placeholder="Search" />
-						<i class="fa fa-solid fa-search"></i>
-					</div>
-					<li value="A">Burger</li>
-					<li value="B">Carbonara</li>
-					<li value="D">Calamares</li>
-					<li value="C">Spaghetti</li>
-					<li value="D">Pizza</li>
-				</ul>
-			</div>
-
-			<div id="2" class="select" multiple>
-				<div class="select-head">
-					<label for="">Multiple Input</label>
-					<div class="container">
-						<selected-container></selected-container>
-						<placeholder>Select Something</placeholder>
-						<i class="fa fa-solid fa-caret-down"></i>
-					</div>
-				</div>
-				<ul class="wrapper">
-					<div class="searchbox-container">
-						<input type="text" name="" id="Searchbox" placeholder="Search" />
-						<i class="fa fa-solid fa-search"></i>
-					</div>
-					<li value="E">Baao</li>
-					<li value="F">Balatan</li>
-					<li value="G">Bato</li>
-					<li value="H">Buhi</li>
-					<li value="I">Bula</li>
-					<li value="J">Caramoan</li>
-					<li value="K">Camaligan</li>
-					<li value="L">Del Gallego</li>
-					<li value="M">Goa</li>
-					<li value="N">Lagonoy</li>
-					<li value="O">San Fernando</li>
-				</ul>
+		<div class="card shadow">
+			<div class="card-body p-5">
+				<cselect single>
+					<cselect-head>
+						<label>Single Input</label>
+						<section>
+							<input readonly type="text" value="" placeholder="Select something from the list" />
+							<i class="fa fa-solid fa-angle-down"></i>
+						</section>
+					</cselect-head>
+					<cselect-options>
+						<search-container>
+							<input type="text" name="" id="Searchfield" placeholder="Search" />
+							<i class="fa fa-solid fa-search"></i>
+						</search-container>
+						<option value="A">Burger</option>
+						<option value="B">Carbonara</option>
+						<option value="D">Calamares</option>
+						<option value="C">Spaghetti</option>
+						<option value="D">Pizza</option>
+					</cselect-options>
+				</cselect>
 			</div>
 		</div>
 	</body>
