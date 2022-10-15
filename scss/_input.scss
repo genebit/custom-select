@@ -42,7 +42,10 @@ input[type="checkbox"] {
 	.cform-input:focus {
 		outline-color: $input-focus-outline-clr;
 	}
-	.float,
+	.float {
+		top: -0.1rem;
+		left: 0.55rem;
+	}
 	.cform-input:focus + label {
 		top: -0.1rem;
 		left: 0.55rem;

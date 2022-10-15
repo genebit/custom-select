@@ -24,9 +24,9 @@ input[type=checkbox] {
   border: none;
   outline: 1px solid rgba(0, 0, 50, 0.25);
   background-color: white;
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 0.65rem 1rem;
-  box-shadow: 0 2px 0px 0 rgba(0, 0, 50, 0.05);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 50, 0.075);
   position: relative;
   width: 100%;
   transition: outline 250ms ease-in-out;
@@ -41,7 +41,10 @@ input[type=checkbox] {
 .floating-cform-input .cform-input:focus {
   outline-color: rgb(92, 207, 102);
 }
-.floating-cform-input .float,
+.floating-cform-input .float {
+  top: -0.1rem;
+  left: 0.55rem;
+}
 .floating-cform-input .cform-input:focus + label {
   top: -0.1rem;
   left: 0.55rem;
@@ -78,10 +81,10 @@ cselect cselect-head label {
 }
 cselect cselect-head section {
   padding: 0.65rem 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   outline: 1px solid rgba(0, 0, 50, 0.25);
-  border-radius: 5px;
-  box-shadow: 0 2px 0px 0 rgba(0, 0, 50, 0.05);
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 50, 0.075);
   transition: outline 250ms ease-in-out;
 }
 cselect cselect-head section input {
@@ -113,19 +116,19 @@ cselect cselect-options {
   padding: 1rem;
   width: 100%;
   margin-top: 0.85rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   background-color: white;
   outline: 1px solid rgba(0, 0, 50, 0.25);
-  border-radius: 5px;
-  box-shadow: 0 2px 0px 0 rgba(0, 0, 50, 0.05);
-  max-height: 200px;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 50, 0.075);
+  max-height: 20rem;
   overflow-y: auto;
 }
 cselect cselect-options search-container {
   position: relative;
   padding: 0.35rem 1rem;
   background-color: #f3f3f3;
-  border-radius: 5px;
+  border-radius: 3px;
   transition: outline 250ms ease-in-out;
 }
 cselect cselect-options search-container input {
@@ -150,7 +153,7 @@ cselect cselect-options search-container i {
 cselect cselect-options coption {
   cursor: pointer;
   padding: 0.35rem;
-  border-radius: 5px;
+  border-radius: 3px;
   font-size: 0.75rem;
   transition: all 250ms ease-in-out;
 }
