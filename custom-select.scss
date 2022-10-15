@@ -1,84 +1,25 @@
-cselect {
-	position: relative;
+$focus-clr: rgb(92, 207, 102);
+$text-clr: rgb(10, 10, 50);
 
-	cselect-head {
-		cursor: pointer;
+$border-radius: 5px;
+$margin-bottom: 1rem;
 
-		label {
-			font-weight: bold;
-			position: absolute;
-			top: -0.55rem;
-			left: 0.5rem;
-			background-color: white;
-			padding: 0 0.65rem;
-			font-size: small;
+$scrollbar-thumb-clr: $focus-clr;
+$scrollbar-max-height: 200px;
+$scrollbar-border-rad: 10rem;
 
-			transition: color 300ms ease-in-out;
-		}
+$input-padding: 0.65rem 1rem;
+$input-box-shadow: 0 2px 0px 0 rgba(0, 0, 50, 0.05);
+$input-outline: 1px solid rgba(0, 0, 50, 0.25);
+$input-focus-clr: $focus-clr;
+$input-focus-outline-clr: $focus-clr;
+$input-font-size: 0.85rem;
+$input-text-clr: $text-clr;
 
-		section {
-			outline: 1px solid black;
-			border-radius: 5px;
-			padding: 1rem;
-			box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+$option-font-size: 0.75rem;
+$label-font-size: 0.85rem;
 
-			transition: outline 300ms ease-in-out;
+$def-anim-time: 250ms;
 
-			input {
-				cursor: pointer;
-				background-color: transparent;
-				border-width: 0;
-				padding: 0;
-				margin: 0;
-				width: 100%;
-				outline: none;
-				font-size: 0.85rem;
-			}
-			i {
-				position: absolute;
-				right: 1rem;
-				top: 1.25rem;
-
-				transform: rotate(0deg);
-				transition: transform 300ms ease-in-out;
-			}
-			i.active {
-				color: green;
-				transform: rotate(180deg);
-			}
-		}
-		placeholder {
-			font-size: 0.85rem;
-			opacity: 60%;
-		}
-	}
-	cselect-options {
-		search-container {
-			background-color: red;
-			border-radius: 5px;
-			padding: 0.6rem 1rem;
-			margin-bottom: 0.5rem;
-
-			input {
-				font-size: 0.85rem;
-			}
-
-			transition: outline 300ms ease-in-out;
-
-			input {
-				background-color: transparent;
-				border-width: 0;
-				padding: 0;
-				margin: 0;
-				width: 100%;
-				outline: none;
-			}
-			i {
-				opacity: 50%;
-				position: absolute;
-				right: 1rem;
-				top: 1.25rem;
-			}
-		}
-	}
-}
+@import "./scss/input";
+@import "./scss/select";

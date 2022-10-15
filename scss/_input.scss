@@ -1,0 +1,66 @@
+label {
+	color: $input-text-clr;
+	font-weight: bold;
+	font-size: $label-font-size;
+}
+input::-webkit-calendar-picker-indicator {
+	cursor: pointer;
+}
+
+input {
+	transition: all $def-anim-time ease-in-out;
+}
+
+input[type="checkbox"] {
+	width: 1rem;
+	height: 1rem;
+	accent-color: $input-focus-clr;
+}
+
+.cform-input {
+	margin: 0.5rem 0;
+	font-size: $input-font-size;
+	border: none;
+	outline: $input-outline;
+	background-color: white;
+	border-radius: $border-radius;
+	padding: $input-padding;
+	box-shadow: $input-box-shadow;
+	position: relative;
+	width: 100%;
+
+	transition: outline $def-anim-time ease-in-out;
+
+	&:focus {
+		outline: 1px solid $input-focus-clr;
+	}
+}
+
+.floating-cform-input {
+	position: relative;
+
+	.cform-input:focus {
+		outline-color: $input-focus-outline-clr;
+	}
+	.float,
+	.cform-input:focus + label {
+		top: -0.1rem;
+		left: 0.55rem;
+		color: $input-focus-clr;
+	}
+	label {
+		position: absolute;
+		top: 1.2rem;
+		left: 0.35rem;
+		padding: 0 0.65rem;
+
+		background-color: white;
+
+		font-weight: bold;
+		font-size: $option-font-size;
+
+		z-index: 1000;
+
+		transition: color $def-anim-time ease-in-out, top $def-anim-time ease-in-out, left $def-anim-time ease-in-out;
+	}
+}

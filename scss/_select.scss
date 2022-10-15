@@ -1,0 +1,160 @@
+cselect {
+	position: relative;
+
+	cselect-head {
+		cursor: pointer;
+
+		label {
+			position: absolute;
+			top: -0.55rem;
+			left: 0.55rem;
+			padding: 0 0.65rem;
+
+			color: $input-text-clr;
+			font-weight: bold;
+			font-size: $label-font-size;
+
+			background-color: white;
+
+			transition: color $def-anim-time ease-in-out;
+		}
+
+		section {
+			padding: $input-padding;
+			margin-bottom: $margin-bottom;
+
+			outline: $input-outline;
+			border-radius: $border-radius;
+			box-shadow: $input-box-shadow;
+
+			transition: outline $def-anim-time ease-in-out;
+
+			input {
+				cursor: pointer;
+
+				// remove default stylings
+				background-color: transparent;
+				border-width: 0;
+				padding: 0;
+				padding-right: 2rem;
+				margin: 0;
+				width: 100%;
+				outline: none;
+
+				font-size: $option-font-size;
+			}
+			i {
+				position: absolute;
+
+				right: 1rem;
+				top: 1rem;
+
+				transform: rotate(0deg);
+
+				transition: transform $def-anim-time ease-in-out;
+			}
+		}
+		placeholder {
+			font-size: $option-font-size;
+		}
+	}
+	cselect-options {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+
+		padding: 1rem;
+		width: 100%;
+		margin-top: 0.85rem;
+		margin-bottom: $margin-bottom;
+
+		background-color: white;
+		outline: $input-outline;
+		border-radius: $border-radius;
+		box-shadow: $input-box-shadow;
+
+		search-container {
+			position: relative;
+			padding: 0.35rem 1rem;
+
+			background-color: #f3f3f3;
+			border-radius: $border-radius;
+
+			transition: outline $def-anim-time ease-in-out;
+
+			input {
+				// remove default stylings
+				background-color: transparent;
+				border-width: 0;
+				padding: 0;
+				padding-right: 1rem;
+				margin: 0;
+				width: 100%;
+				outline: none;
+
+				font-size: $option-font-size;
+			}
+			i {
+				position: absolute;
+
+				right: 0.75rem;
+				top: 0.75rem;
+
+				font-size: $option-font-size;
+				opacity: 50%;
+
+				transform: rotate(0deg);
+
+				transition: transform $def-anim-time ease-in-out;
+			}
+		}
+
+		coption {
+			cursor: pointer;
+
+			padding: 0.35rem;
+			border-radius: $border-radius;
+			font-size: $option-font-size;
+
+			transition: all $def-anim-time ease-in-out;
+			&:hover {
+				font-weight: bold;
+				color: white;
+				background: $focus-clr;
+			}
+		}
+
+		//#region SCROLLBAR
+		max-height: $scrollbar-max-height;
+		overflow-y: auto;
+
+		&::-webkit-scrollbar {
+			width: 1rem;
+		}
+		&::-webkit-scrollbar-thumb {
+			border: 4px solid transparent;
+			background-clip: padding-box;
+			border-radius: $scrollbar-border-rad;
+			background-color: $scrollbar-thumb-clr;
+		}
+		&::-webkit-scrollbar-track {
+			background: none;
+		}
+		//#endregion
+	}
+
+	section.active,
+	cselect-options.active {
+		outline-color: $focus-clr;
+	}
+
+	section.active,
+	label.active {
+		color: $focus-clr;
+	}
+
+	i.active {
+		transform: rotate(180deg);
+	}
+}
