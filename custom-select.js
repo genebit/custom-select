@@ -1,13 +1,16 @@
 const ANIMATION_TIME = 250;
+let selectedValues = [];
 
 $(document).ready(function () {
 	$("cselect cselect-options").hide();
 	selectHeadClickHandler();
+	cformInputHandler();
 });
 
 function selectHeadClickHandler() {
 	$("cselect cselect-head").click(function (e) {
 		let parentId = $(this).closest("cselect")[0].id;
+		selectedValues = [];
 
 		// change styles
 		$(` #${parentId} section,
@@ -66,24 +69,24 @@ function coptionClickHandler(parentId) {
 
 	$.each(options, function (indexInArray, valueOfElement) {
 		$(this).click(function (e) {
-			setTimeout(function () {
-				// wait a few ms to trigger the searchfield to reset
-				resetSearchfield(parentId);
-			}, 200);
-
 			// set value to cselect head
 			$(`#${parentId}`).attr("value", this.getAttribute("value"));
 			$(`#${parentId} section input`).val(this.textContent);
 
-			// close the option dropdown
-			$(`#${parentId} cselect-options`).slideUp(ANIMATION_TIME);
+			setTimeout(function () {
+				// wait a few ms to trigger the searchfield to reset
+				resetSearchfield(parentId);
+
+				// close the option dropdown
+				$(`#${parentId} cselect-options`).slideUp(ANIMATION_TIME);
+			}, 200);
 
 			// remove active state
 			$(` #${parentId} section,
 					#${parentId} section i,
 					#${parentId} label,
 					#${parentId} cselect-options
-				`).removeClass("active");
+			`).removeClass("active");
 		});
 	});
 }
