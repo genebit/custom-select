@@ -1,29 +1,35 @@
 const ANIMATION_TIME = 250;
 
-$("cselect cselect-options").hide();
-
-$("cselect cselect-head").click(function (e) {
-	let parentId = $(this).closest("cselect")[0].id;
-
-	// change styles
-	$(` #${parentId} section,
-        #${parentId} section i,
-        #${parentId} label,
-        #${parentId} cselect-options
-    `).toggleClass("active");
-
-	// toggle hide/show
-	$(`#${parentId} cselect-options`).slideToggle(ANIMATION_TIME);
-
-	// get the selectid to search through
-	searchItems(parentId);
-	optionClickHandler(parentId);
+$(document).ready(function () {
+	$("cselect cselect-options").hide();
+	selectHeadClickHandler();
 });
 
-function searchItems(parentId) {
+function selectHeadClickHandler() {
+	$("cselect cselect-head").click(function (e) {
+		let parentId = $(this).closest("cselect")[0].id;
+
+		// change styles
+		$(` #${parentId} section,
+			#${parentId} section i,
+			#${parentId} label,
+			#${parentId} cselect-options
+		`).toggleClass("active");
+
+		// toggle hide/show
+		resetSearchfield(parentId);
+		$(`#${parentId} cselect-options`).slideToggle(ANIMATION_TIME);
+
+		// get the selectid to search through
+		cselectSearchHandler(parentId);
+		coptionClickHandler(parentId);
+	});
+}
+
+function cselectSearchHandler(parentId) {
 	let options = $(`#${parentId} cselect-options coption`);
 
-	$("cselect cselect-options #Searchfield").keyup(function (e) {
+	$("cselect-options [searchfield]").keyup(function (e) {
 		let parentId = $(this).closest("cselect")[0].id;
 
 		let query = $(this).val();
@@ -51,47 +57,74 @@ function searchItems(parentId) {
 			$(`#${parentId} cselect-options`).append(option);
 		});
 
-		optionClickHandler(parentId);
+		coptionClickHandler(parentId);
 	});
 }
 
-function optionClickHandler(parentId) {
+function coptionClickHandler(parentId) {
 	let options = $(`#${parentId} cselect-options coption`);
-	$.each(options, function (indexInArray, valueOfElement) {
-		$(this).click(function (e) {
-			setTimeout(() => {
-				// trigger the searchfield to reset
-				$(`#${parentId} #Searchfield`).val("");
-				$(`#${parentId} #Searchfield`).keyup();
-			}, 200);
 
-			// set value to cselect
-			$(`#${parentId}`).attr("value", this.getAttribute("value"));
-			$(`#${parentId} section input`).val(this.textContent);
+	if ($(`#${parentId}`).attr("single") != undefined) {
+		$.each(options, function (indexInArray, valueOfElement) {
+			$(this).click(function (e) {
+				setTimeout(function () {
+					// wait a few ms to trigger the searchfield to reset
+					resetSearchfield(parentId);
+				}, 200);
 
-			// close the option dropdown
-			$(`#${parentId} cselect-options`).slideUp(ANIMATION_TIME);
+				// set value to cselect head
+				$(`#${parentId}`).attr("value", this.getAttribute("value"));
+				$(`#${parentId} section input`).val(this.textContent);
 
-			// remove active state
-			$(` #${parentId} section,
-                #${parentId} section i,
-                #${parentId} label,
-                #${parentId} cselect-options
-            `).removeClass("active");
+				// close the option dropdown
+				$(`#${parentId} cselect-options`).slideUp(ANIMATION_TIME);
+
+				// remove active state
+				$(` #${parentId} section,
+					#${parentId} section i,
+					#${parentId} label,
+					#${parentId} cselect-options
+				`).removeClass("active");
+			});
 		});
-	});
+	}
+
+	if ($(`#${parentId}`).attr("multiple") != undefined) {
+		$.each(options, function (indexInArray, valueOfElement) {
+			$(this).click(function (e) {
+				setTimeout(function () {
+					// wait a few ms to trigger the searchfield to reset
+					resetSearchfield(parentId);
+				}, 200);
+			});
+		});
+	}
 }
 
-$(`#SingleExample1, #SingleExample2`).change(function () {
-	setTimeout(() => {
-		console.log($(this).attr("value"));
-	}, 100);
-});
+function resetSearchfield(parentId) {
+	$(`#${parentId} [searchfield]`).val("");
+	$(`#${parentId} [searchfield]`).keyup();
+}
 
-$(".floating-cform-input .cform-input").keyup(function (e) {
-	if (this.value.length > 0) {
-		$(this).siblings(0).addClass("float");
-	} else {
-		$(this).siblings(0).removeClass("float");
-	}
-});
+function cformInputHandler() {
+	let cformInputs = $(".cform-input");
+	$.each(cformInputs, function (indexInArray, valueOfElement) {
+		let placeholder = $(`#${this.id}`).attr("placeholder");
+
+		if (placeholder != undefined && placeholder.length > 0) {
+			let label = $(this).siblings(1);
+			$(label).addClass("float");
+		}
+	});
+
+	$(".cform-input").keyup(function (e) {
+		// check first if placeholder is undefined before adding float class
+		let placeholderLength = $(this).attr("placeholder") == undefined ? 0 : $(this).attr("placeholder").length;
+
+		if (this.value.length > 0 || placeholderLength > 0) {
+			$(this).siblings(0).addClass("float");
+		} else {
+			$(this).siblings(0).removeClass("float");
+		}
+	});
+}

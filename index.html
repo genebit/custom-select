@@ -19,153 +19,242 @@
 		<!-- Custom Select JS (required) -->
 		<script defer src="custom-select.js"></script>
 		<style>
-			@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 			* {
-				font-family: "Inter", sans-serif;
-			}
-			html,
-			body {
-				padding: 2rem;
+				font-family: Georgia, "Times New Roman", Times, serif;
 			}
 		</style>
 	</head>
-	<body>
+	<body class="p-4">
 		<div class="card shadow">
-			<div class="card-header">
-				<h3 class="fw-bold p-3 m-0">FORM</h3>
+			<div class="card-header bg-transparent">
+				<h3 class="fw-bold p-3 m-0">CUSTOM FORMS</h3>
 			</div>
 			<div class="card-body p-5">
-				<cselect id="SingleExample1" single>
-					<cselect-head>
-						<label>Favorite Food</label>
-						<section>
-							<input readonly type="text" value="" placeholder="Select your favorite food from the list" />
-							<i class="fa fa-solid fa-angle-down"></i>
-						</section>
-					</cselect-head>
-					<cselect-options>
-						<search-container>
-							<input type="text" name="" id="Searchfield" placeholder="Search" />
-							<i class="fa fa-solid fa-search"></i>
-						</search-container>
-						<coption value="A">Burger</coption>
-						<coption value="B">Carbonara</coption>
-						<coption value="D">Calamares</coption>
-						<coption value="C">Spaghetti</coption>
-						<coption value="D">Pizza</coption>
-					</cselect-options>
-				</cselect>
-				<cselect id="SingleExample2" single>
-					<cselect-head>
-						<label>Municipality</label>
-						<section>
-							<input readonly type="text" value="" placeholder="Select a municipality" />
-							<i class="fa fa-solid fa-angle-down"></i>
-						</section>
-					</cselect-head>
-					<cselect-options>
-						<search-container>
-							<input type="text" name="" id="Searchfield" placeholder="Search" />
-							<i class="fa fa-solid fa-search"></i>
-						</search-container>
-						<coption value="Baao">Baao</coption>
-						<coption value="Balatan">Balatan</coption>
-						<coption value="Bato">Bato</coption>
-						<coption value="Bombon">Bombon</coption>
-						<coption value="Buhi">Buhi</coption>
-						<coption value="Bula">Bula</coption>
-						<coption value="Cabusao">Cabusao</coption>
-						<coption value="Calabanga">Calabanga</coption>
-						<coption value="Camaligan">Camaligan</coption>
-						<coption value="Canaman">Canaman</coption>
-						<coption value="Caramoan">Caramoan</coption>
-						<coption value="Del Gallego">Del Gallego</coption>
-						<coption value="Gainza">Gainza </coption>
-						<coption value="Garchitorena">Garchitorena </coption>
-						<coption value="Goa">Goa </coption>
-						<coption value="Lagonoy">Lagonoy </coption>
-						<coption value="Libmanan">Libmanan </coption>
-						<coption value="Lupi">Lupi </coption>
-						<coption value="Magarao">Magarao </coption>
-						<coption value="Milaor">Milaor </coption>
-						<coption value="Minalabac">Minalabac</coption>
-						<coption value="Nabua">Nabua</coption>
-						<coption value="Ocampo">Ocampo</coption>
-						<coption value="Pamplona">Pamplona</coption>
-						<coption value="Pasacao">Pasacao</coption>
-						<coption value="Pili">Pili</coption>
-						<coption value="Presentacion">Presentacion</coption>
-						<coption value="Ragay">Ragay</coption>
-						<coption value="Sagñay">Sagñay</coption>
-						<coption value="San Fernando">San Fernando</coption>
-						<coption value="San Jose">San Jose</coption>
-						<coption value="Sipocot">Sipocot</coption>
-						<coption value="Siruma">Siruma</coption>
-						<coption value="Tigaon">Tigaon</coption>
-						<coption value="Tinambac">Tinambac</coption>
-					</cselect-options>
-				</cselect>
-				<div>
-					<cselect id="SingleExample3" single>
-						<cselect-head>
-							<label>Frequency</label>
-							<section>
-								<input readonly type="text" value="" placeholder="Select frequency" />
-								<i class="fa fa-solid fa-angle-down"></i>
-							</section>
-						</cselect-head>
-						<cselect-options>
-							<search-container>
-								<input type="text" name="" id="Searchfield" placeholder="Search" />
-								<i class="fa fa-solid fa-search"></i>
-							</search-container>
-							<coption value="A">Hourly</coption>
-							<coption value="B">Daily</coption>
-							<coption value="C">Weekly</coption>
-							<coption value="D">Annualy</coption>
-						</cselect-options>
-					</cselect>
-					<div id="DateRange" class="row">
-						<div class="col-sm-6">
+				<div class="row">
+					<div class="col-md-12">
+						<cselect id="MultipleSelect1" multiple>
+							<cselect-head>
+								<label>Favorite Food</label>
+								<section>
+									<input readonly type="text" value="" placeholder="Select your favorite food from the list" />
+									<i class="fa fa-solid fa-angle-down"></i>
+								</section>
+							</cselect-head>
+							<cselect-options>
+								<search-container>
+									<input type="text" name="" searchfield placeholder="Search" />
+									<i class="fa fa-solid fa-search"></i>
+								</search-container>
+								<coption value="A">Burger</coption>
+								<coption value="B">Carbonara</coption>
+								<coption value="D">Calamares</coption>
+								<coption value="C">Spaghetti</coption>
+								<coption value="D">Pizza</coption>
+							</cselect-options>
+						</cselect>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<cselect id="SingleExample2" single>
+							<cselect-head>
+								<label>Municipality</label>
+								<section>
+									<input readonly type="text" value="" placeholder="Select a municipality" />
+									<i class="fa fa-solid fa-angle-down"></i>
+								</section>
+							</cselect-head>
+							<cselect-options>
+								<search-container>
+									<input type="text" name="" searchfield placeholder="Search" />
+									<i class="fa fa-solid fa-search"></i>
+								</search-container>
+								<coption value="Baao">Baao</coption>
+								<coption value="Balatan">Balatan</coption>
+								<coption value="Bato">Bato</coption>
+								<coption value="Bombon">Bombon</coption>
+								<coption value="Buhi">Buhi</coption>
+								<coption value="Bula">Bula</coption>
+								<coption value="Cabusao">Cabusao</coption>
+								<coption value="Calabanga">Calabanga</coption>
+								<coption value="Camaligan">Camaligan</coption>
+								<coption value="Canaman">Canaman</coption>
+								<coption value="Caramoan">Caramoan</coption>
+								<coption value="Del Gallego">Del Gallego</coption>
+								<coption value="Gainza">Gainza </coption>
+								<coption value="Garchitorena">Garchitorena </coption>
+								<coption value="Goa">Goa </coption>
+								<coption value="Lagonoy">Lagonoy </coption>
+								<coption value="Libmanan">Libmanan </coption>
+								<coption value="Lupi">Lupi </coption>
+								<coption value="Magarao">Magarao </coption>
+								<coption value="Milaor">Milaor </coption>
+								<coption value="Minalabac">Minalabac</coption>
+								<coption value="Nabua">Nabua</coption>
+								<coption value="Ocampo">Ocampo</coption>
+								<coption value="Pamplona">Pamplona</coption>
+								<coption value="Pasacao">Pasacao</coption>
+								<coption value="Pili">Pili</coption>
+								<coption value="Presentacion">Presentacion</coption>
+								<coption value="Ragay">Ragay</coption>
+								<coption value="Sagñay">Sagñay</coption>
+								<coption value="San Fernando">San Fernando</coption>
+								<coption value="San Jose">San Jose</coption>
+								<coption value="Sipocot">Sipocot</coption>
+								<coption value="Siruma">Siruma</coption>
+								<coption value="Tigaon">Tigaon</coption>
+								<coption value="Tinambac">Tinambac</coption>
+							</cselect-options>
+						</cselect>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<cselect id="SingleExample3" single>
+							<cselect-head>
+								<label>Province</label>
+								<section>
+									<input readonly type="text" value="" placeholder="Select province" />
+									<i class="fa fa-solid fa-angle-down"></i>
+								</section>
+							</cselect-head>
+							<cselect-options>
+								<search-container>
+									<input type="text" name="" searchfield placeholder="Search" />
+									<i class="fa fa-solid fa-search"></i>
+								</search-container>
+								<coption value="A">Albay</coption>
+								<coption value="B">Camarines Norte</coption>
+								<coption value="C">Camarines Sur</coption>
+								<coption value="D">Sorsogon</coption>
+								<coption value="E">Catanduanes</coption>
+								<coption value="F">Masbate</coption>
+							</cselect-options>
+						</cselect>
+					</div>
+					<div class="col-md-6">
+						<cselect id="SingleExample4" single>
+							<cselect-head>
+								<label>Frequency</label>
+								<section>
+									<input readonly type="text" value="" placeholder="Select frequency" />
+									<i class="fa fa-solid fa-angle-down"></i>
+								</section>
+							</cselect-head>
+							<cselect-options>
+								<search-container>
+									<input type="text" name="" searchfield placeholder="Search" />
+									<i class="fa fa-solid fa-search"></i>
+								</search-container>
+								<coption value="A">Hourly</coption>
+								<coption value="B">Daily</coption>
+								<coption value="C">Weekly</coption>
+								<coption value="D">Annualy</coption>
+							</cselect-options>
+						</cselect>
+					</div>
+				</div>
+				<hr />
+				<div class="row">
+					<div class="col-sm-6 d-flex align-items-center gap-2">
+						<label for="RememberMe">Remember Me?</label>
+						<input id="RememberMe" type="checkbox" />
+						<input id="RememberMe" checked type="checkbox" />
+						<input id="RememberMe" disabled type="checkbox" />
+					</div>
+					<div class="col-sm-6 d-flex align-items-center gap-2">
+						<label for="">Radio checkbox</label>
+						<input id="RememberMe" disabled type="radio" />
+						<input id="RememberMe" type="radio" />
+						<input id="RememberMe" checked type="radio" />
+					</div>
+				</div>
+				<hr />
+				<div id="DateRange" class="row">
+					<div class="col-sm-12">
+						<label for="StartDate">Birth Day</label>
+						<input id="StartDate" class="cform-input" type="date" />
+					</div>
+					<div class="col-sm-6">
+						<div class="floating-cform-label">
 							<label for="StartDate">Start Date</label>
 							<input id="StartDate" class="cform-input" type="date" />
 						</div>
-						<div class="col-sm-6">
+					</div>
+					<div class="col-sm-6">
+						<div class="floating-cform-label">
 							<label for="EndDate">End Date</label>
 							<input id="EndDate" class="cform-input" type="date" />
 						</div>
 					</div>
-					<div id="DateRange" class="row">
-						<div class="col-sm-6">
+				</div>
+				<div id="TimeRange" class="row">
+					<div class="col-sm-6">
+						<div class="floating-cform-label">
 							<label for="StartTime">Start Time</label>
 							<input id="StartTime" class="cform-input" type="time" />
 						</div>
-						<div class="col-sm-6">
+					</div>
+					<div class="col-sm-6">
+						<div class="floating-cform-label">
 							<label for="EndTime">End Time</label>
 							<input id="EndTime" class="cform-input" type="time" />
 						</div>
 					</div>
-					<div id="DateRange" class="row">
-						<div class="col-sm-6 d-flex align-items-center gap-2">
-							<label for="RememberMe">Remember Me?</label>
-							<input id="RememberMe" type="checkbox" />
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="floating-cform-input">
+							<input id="FullName" class="cform-input" type="text" />
+							<label for="FullName">Full Name</label>
 						</div>
 					</div>
-					<div class="floating-cform-input">
-						<input id="FullName" class="cform-input" type="text" />
-						<label for="FullName">Full Name</label>
-					</div>
-					<div class="floating-cform-input">
-						<input id="EmailAddress" class="cform-input" type="email" />
-						<label for="EmailAddress">Email Address</label>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="floating-cform-input">
+							<input id="Username" class="cform-input" type="text" placeholder="John Doe Smith" />
+							<label for="Username">Username</label>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="card-footer">
-				<button class="btn px-4 btn-outline-success">Reset</button>
-				<button class="btn px-4 btn-success">Submit</button>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="floating-cform-input">
+							<input id="Password" class="cform-input" type="password" placeholder="Enter a secured password" />
+							<label for="Password">Password</label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="floating-cform-input">
+							<input id="EmailAddress" class="cform-input" type="email" />
+							<label for="EmailAddress">Email Address</label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="floating-cform-input">
+							<textarea id="Comment" class="cform-input" rows="10" placeholder="Write something beautiful!"></textarea>
+							<label for="Comment">Comment</label>
+						</div>
+					</div>
+				</div>
+				<div class="d-flex gap-2">
+					<button class="btn px-4 btn-outline-success">Reset</button>
+					<button class="btn px-4 btn-success">Submit</button>
+				</div>
 			</div>
 		</div>
+		<script>
+			// sample onchange event on cselect
+			$(`#SingleExample1, #SingleExample2`).change(function () {
+				setTimeout(() => {
+					console.log($(this).attr("value"));
+				}, 100);
+			});
+		</script>
 	</body>
 </html>

@@ -1,7 +1,7 @@
 $focus-clr: rgb(92, 207, 102);
 $text-clr: rgb(10, 10, 50);
 
-$border-radius: 3px;
+$border-radius: 5px;
 $margin-bottom: 1.25rem;
 
 $scrollbar-thumb-clr: $focus-clr;
@@ -9,8 +9,8 @@ $scrollbar-max-height: 20rem;
 $scrollbar-border-rad: 10rem;
 
 $input-padding: 0.65rem 1rem;
-$input-box-shadow: 0 2px 5px 0 rgba(0, 0, 50, 0.075);
-$input-outline: 1px solid rgba(0, 0, 50, 0.25);
+$input-box-shadow: 0 2px 5px 0 rgba(0, 0, 50, 0);
+$input-outline: 1px solid rgba(0, 0, 50, 0.095);
 $input-focus-clr: $focus-clr;
 $input-focus-outline-clr: $focus-clr;
 $input-font-size: 0.85rem;
