@@ -29,6 +29,81 @@ Import the files to your html header
 </head>
 ```
 
-Once done, custom ui is now ready to use. To use them you need to
+### **Single Select Input**
 
-## **Customization**
+Syntax for using custom select. In here you can modify:
+
+-   Caret icon
+-   Search icon
+-   Remove search container and not have search functionality
+
+**NOTE:**
+
+-   It is important to use the custom tagnames for it to be recognized in the script
+-   A value is required
+
+```html
+<cselect id="ExampleId" single>
+	<cselect-head>
+		<label></label>
+		<section>
+			<input readonly type="text" placeholder="" />
+			<i class="fa fa-solid fa-caret-down"></i>
+		</section>
+	</cselect-head>
+	<cselect-options>
+		<search-container>
+			<input type="text" searchfield placeholder="Search" />
+			<i class="fa fa-solid fa-search"></i>
+		</search-container>
+		<coption value=""></coption>
+		<coption value=""></coption>
+		<coption value=""></coption>
+		<coption value=""></coption>
+	</cselect-options>
+</cselect>
+```
+
+### **Custom Form Inputs**
+
+Use the class `cform-input` to `input` type elements. Labels here are not required
+
+```html
+<div class="col-sm-12">
+	<label for="BirthDay">Birth Day</label>
+	<input id="BirthDay" class="cform-input" type="date" />
+</div>
+```
+
+For **floating labels only**, wrap them in a div with a class `floating-cform-label`.
+Note that `<label>` is required.
+
+```html
+<div class="floating-cform-label">
+	<label for="Sample"></label>
+	<input id="Sample" class="cform-input" type="date" />
+</div>
+```
+
+For **floating labels on input type fields**, wrap them in a div with a class `floating-cform-input`.
+Note that `<label>` is required.
+
+```html
+<div class="floating-cform-input">
+	<input id="FullName" class="cform-input" type="text" />
+	<label for="FullName">Full Name</label>
+</div>
+```
+
+### **Eventlisteners**
+
+To get the value of the single select input. It is required to put the `setTimeout()` function.
+
+```js
+// sample onchange event on cselect
+$(`#SingleSelectExample1`).change(function () {
+	setTimeout(() => {
+		console.log($(this).attr("value"));
+	}, 100);
+});
+```
