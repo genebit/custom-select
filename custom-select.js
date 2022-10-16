@@ -26,6 +26,7 @@ function selectHeadClickHandler() {
 		// get the selectid to search through
 		cselectSearchHandler(parentId);
 		coptionClickHandler(parentId);
+		cformInputHandler();
 	});
 }
 

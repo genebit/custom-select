@@ -23,11 +23,11 @@ input[type=radio] {
   margin: 0.5rem 0;
   font-size: 0.85rem;
   border: none;
-  outline: 1px solid rgba(0, 0, 50, 0.095);
+  outline: 1px solid rgba(0, 0, 50, 0.3);
   background-color: white;
   border-radius: 5px;
   padding: 0.65rem 1rem;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 50, 0);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 50, 0.15);
   position: relative;
   width: 100%;
   transition: outline 250ms ease-in-out;
@@ -96,9 +96,9 @@ cselect cselect-head label {
 cselect cselect-head section {
   padding: 0.65rem 1rem;
   margin-bottom: 1.25rem;
-  outline: 1px solid rgba(0, 0, 50, 0.095);
+  outline: 1px solid rgba(0, 0, 50, 0.3);
   border-radius: 5px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 50, 0);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 50, 0.15);
   transition: outline 250ms ease-in-out;
 }
 cselect cselect-head section input {
@@ -132,9 +132,9 @@ cselect cselect-options {
   margin-top: 0.85rem;
   margin-bottom: 1.25rem;
   background-color: white;
-  outline: 1px solid rgba(0, 0, 50, 0.095);
+  outline: 1px solid rgba(0, 0, 50, 0.3);
   border-radius: 5px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 50, 0);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 50, 0.15);
   max-height: 20rem;
   overflow-y: auto;
 }
