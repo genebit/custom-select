@@ -29,7 +29,7 @@ function selectHeadClickHandler() {
 function cselectSearchHandler(parentId) {
 	let options = $(`#${parentId} cselect-options coption`);
 
-	$("cselect-options [searchfield]").keyup(function (e) {
+	$(`#${parentId} [searchfield]`).keyup(function (e) {
 		let parentId = $(this).closest("cselect")[0].id;
 
 		let query = $(this).val();
@@ -64,41 +64,28 @@ function cselectSearchHandler(parentId) {
 function coptionClickHandler(parentId) {
 	let options = $(`#${parentId} cselect-options coption`);
 
-	if ($(`#${parentId}`).attr("single") != undefined) {
-		$.each(options, function (indexInArray, valueOfElement) {
-			$(this).click(function (e) {
-				setTimeout(function () {
-					// wait a few ms to trigger the searchfield to reset
-					resetSearchfield(parentId);
-				}, 200);
+	$.each(options, function (indexInArray, valueOfElement) {
+		$(this).click(function (e) {
+			setTimeout(function () {
+				// wait a few ms to trigger the searchfield to reset
+				resetSearchfield(parentId);
+			}, 200);
 
-				// set value to cselect head
-				$(`#${parentId}`).attr("value", this.getAttribute("value"));
-				$(`#${parentId} section input`).val(this.textContent);
+			// set value to cselect head
+			$(`#${parentId}`).attr("value", this.getAttribute("value"));
+			$(`#${parentId} section input`).val(this.textContent);
 
-				// close the option dropdown
-				$(`#${parentId} cselect-options`).slideUp(ANIMATION_TIME);
+			// close the option dropdown
+			$(`#${parentId} cselect-options`).slideUp(ANIMATION_TIME);
 
-				// remove active state
-				$(` #${parentId} section,
+			// remove active state
+			$(` #${parentId} section,
 					#${parentId} section i,
 					#${parentId} label,
 					#${parentId} cselect-options
 				`).removeClass("active");
-			});
 		});
-	}
-
-	if ($(`#${parentId}`).attr("multiple") != undefined) {
-		$.each(options, function (indexInArray, valueOfElement) {
-			$(this).click(function (e) {
-				setTimeout(function () {
-					// wait a few ms to trigger the searchfield to reset
-					resetSearchfield(parentId);
-				}, 200);
-			});
-		});
-	}
+	});
 }
 
 function resetSearchfield(parentId) {
