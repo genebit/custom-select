@@ -57,9 +57,31 @@ Syntax for using custom select. In here you can modify:
 			<i class="fa fa-solid fa-search"></i>
 		</search-container>
 		<coption value=""></coption>
+		...
+	</cselect-options>
+</cselect>
+```
+
+### **Floating Dropdown**
+
+- Simply add the class `float` to the `<cselect-options>` tag
+
+```html
+<cselect id="ExampleId" single>
+	<cselect-head>
+		<label></label>
+		<section>
+			<input readonly type="text" placeholder="" />
+			<i class="fa fa-solid fa-caret-down"></i>
+		</section>
+	</cselect-head>
+	<cselect-options class="float">
+		<search-container>
+			<input type="text" searchfield placeholder="Search" />
+			<i class="fa fa-solid fa-search"></i>
+		</search-container>
 		<coption value=""></coption>
-		<coption value=""></coption>
-		<coption value=""></coption>
+		...
 	</cselect-options>
 </cselect>
 ```

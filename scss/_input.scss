@@ -11,6 +11,10 @@ input {
 	transition: all $def-anim-time ease-in-out;
 }
 
+input::-webkit-inner-spin-button {
+	appearance: none;
+}
+
 input[type="checkbox"],
 input[type="radio"] {
 	width: 1rem;
@@ -51,6 +55,13 @@ input[type="radio"] {
 	}
 }
 
+.cform-input + label {
+	transition: all $def-anim-time ease-in-out;
+}
+.cform-input:focus + label {
+	color: $input-focus-clr;
+}
+
 .floating-cform-input {
 	position: relative;
 
@@ -72,8 +83,8 @@ input[type="radio"] {
 		left: 0.35rem;
 		padding: 0 0.65rem;
 
+		color: $text-clr;
 		background-color: white;
-
 		font-weight: bold;
 		font-size: $option-font-size;
 

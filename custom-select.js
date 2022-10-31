@@ -60,8 +60,6 @@ function cselectSearchHandler(parentId) {
 
 			$(`#${parentId} cselect-options`).append(option);
 		});
-
-		coptionClickHandler(parentId);
 	});
 }
 
@@ -83,11 +81,13 @@ function coptionClickHandler(parentId) {
 			}, 200);
 
 			// remove active state
-			$(` #${parentId} section,
-					#${parentId} section i,
-					#${parentId} label,
-					#${parentId} cselect-options
+			$(`	#${parentId} section,
+				#${parentId} section i,
+				#${parentId} label,
+				#${parentId} cselect-options
 			`).removeClass("active");
+
+			$(`#${parentId}`).trigger("change");
 		});
 	});
 }

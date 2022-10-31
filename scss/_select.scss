@@ -144,6 +144,35 @@ cselect {
 		//#endregion
 	}
 
+	cselect-multiple-container {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem;
+		margin-bottom: 1.5rem;
+	}
+	cselect-multiple-container > p {
+		background-color: $focus-clr;
+		color: white;
+		padding: 0.15rem 1rem;
+		border-radius: 10rem;
+		font-size: $option-font-size;
+		margin-bottom: 0;
+		transition: background-color $def-anim-time ease-in-out;
+	}
+	cselect-multiple-container > p:hover {
+		cursor: pointer;
+		background-color: $focus-clr-hvr;
+	}
+
+	cselect-options.float {
+		position: absolute;
+		z-index: 100000;
+		background-color: white;
+		margin-top: 1rem;
+		max-height: 15rem;
+		top: 100%;
+	}
+
 	section.active,
 	cselect-options.active {
 		outline-color: $focus-clr;
@@ -155,6 +184,7 @@ cselect {
 	}
 
 	i.active {
+		color: $focus-clr;
 		transform: rotate(180deg);
 	}
 }

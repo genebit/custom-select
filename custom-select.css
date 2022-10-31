@@ -12,6 +12,11 @@ input {
   transition: all 250ms ease-in-out;
 }
 
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
 input[type=checkbox],
 input[type=radio] {
   width: 1rem;
@@ -49,6 +54,14 @@ input[type=radio] {
   font-size: 0.75rem;
 }
 
+.cform-input + label {
+  transition: all 250ms ease-in-out;
+}
+
+.cform-input:focus + label {
+  color: rgb(92, 207, 102);
+}
+
 .floating-cform-input {
   position: relative;
 }
@@ -69,6 +82,7 @@ input[type=radio] {
   top: 1.2rem;
   left: 0.35rem;
   padding: 0 0.65rem;
+  color: rgb(10, 10, 50);
   background-color: white;
   font-weight: bold;
   font-size: 0.75rem;
@@ -188,6 +202,33 @@ cselect cselect-options::-webkit-scrollbar-thumb {
 cselect cselect-options::-webkit-scrollbar-track {
   background: none;
 }
+cselect cselect-multiple-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+cselect cselect-multiple-container > p {
+  background-color: rgb(92, 207, 102);
+  color: white;
+  padding: 0.15rem 1rem;
+  border-radius: 10rem;
+  font-size: 0.75rem;
+  margin-bottom: 0;
+  transition: background-color 250ms ease-in-out;
+}
+cselect cselect-multiple-container > p:hover {
+  cursor: pointer;
+  background-color: rgb(78, 185, 87);
+}
+cselect cselect-options.float {
+  position: absolute;
+  z-index: 100000;
+  background-color: white;
+  margin-top: 1rem;
+  max-height: 15rem;
+  top: 100%;
+}
 cselect section.active,
 cselect cselect-options.active {
   outline-color: rgb(92, 207, 102);
@@ -197,5 +238,6 @@ cselect label.active {
   color: rgb(92, 207, 102);
 }
 cselect i.active {
+  color: rgb(92, 207, 102);
   transform: rotate(180deg);
 }/*# sourceMappingURL=custom-select.css.map */

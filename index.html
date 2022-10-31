@@ -51,6 +51,20 @@
 								<coption value="C">Spaghetti</coption>
 								<coption value="D">Pizza</coption>
 							</cselect-options>
+							<cselect-multiple-container>
+								<p>Burger</p>
+								<p>Carbonara</p>
+								<p>Pizza</p>
+								<p>Lorem ipsum dolor sit.</p>
+								<p>Id perferendis magni inventore.</p>
+								<p>Itaque architecto reiciendis tempore.</p>
+								<p>Accusamus laboriosam ex voluptates!</p>
+								<p>Rem dolorum quia adipisci.</p>
+								<p>Calamares</p>
+								<p>Rem dolorum quia adipisci.</p>
+								<p>Id perferendis magni inventore.</p>
+								<p>Rem dolorum quia adipisci.</p>
+							</cselect-multiple-container>
 						</cselect>
 					</div>
 				</div>
@@ -118,7 +132,7 @@
 									<i class="fa fa-solid fa-angle-down"></i>
 								</section>
 							</cselect-head>
-							<cselect-options>
+							<cselect-options class="float">
 								<search-container>
 									<input type="text" name="" searchfield placeholder="Search" />
 									<i class="fa fa-solid fa-search"></i>
@@ -141,7 +155,7 @@
 									<i class="fa fa-solid fa-angle-down"></i>
 								</section>
 							</cselect-head>
-							<cselect-options>
+							<cselect-options class="float">
 								<search-container>
 									<input type="text" name="" searchfield placeholder="Search" />
 									<i class="fa fa-solid fa-search"></i>
@@ -250,10 +264,8 @@
 		</div>
 		<script>
 			// sample onchange event on cselect
-			$(`#SingleExample1, #SingleExample2`).change(function () {
-				setTimeout(() => {
-					console.log($(this).attr("value"));
-				}, 100);
+			$("#SingleExample2").change(function () {
+				console.log($(this).attr("value"));
 			});
 		</script>
 	</body>
